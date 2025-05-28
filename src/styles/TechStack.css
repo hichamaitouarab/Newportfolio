@@ -1,0 +1,136 @@
+.tech-stack {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.tech-stack-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #007bff, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tech-stack-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+  margin-bottom: 50px;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tech-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.tech-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 123, 255, 0.2);
+}
+
+.tech-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.tech-card:hover .tech-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px currentColor);
+}
+
+.tech-name {
+  font-size: 1.2rem;
+  margin: 0;
+  color: white;
+  font-weight: 600;
+}
+
+/* Animation for scroll reveal */
+.tech-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideInUp 0.6s ease forwards;
+}
+
+.tech-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.tech-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.tech-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.tech-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.tech-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.tech-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.tech-card:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.tech-card:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tech-stack {
+    padding: 60px 0;
+  }
+
+  .tech-stack-title {
+    font-size: 2rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
+
+  .tech-card {
+    padding: 20px;
+  }
+
+  .tech-icon {
+    font-size: 2.5rem;
+  }
+}

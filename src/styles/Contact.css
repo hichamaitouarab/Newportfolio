@@ -1,0 +1,347 @@
+.contact {
+  padding: 80px 0;
+  background: #0f0f0f;
+  color: white;
+  min-height: 100vh;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #007bff, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: slideInDown 0.8s ease 0.2s forwards;
+}
+
+.contact-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: slideInDown 0.8s ease 0.4s forwards;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.contact-form-wrapper {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInLeft 0.8s ease 0.6s forwards;
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ccc;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #666;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(45deg, #007bff, #00d4ff);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4);
+}
+
+.contact-illustration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideInRight 0.8s ease 0.8s forwards;
+}
+
+.support-person {
+  position: relative;
+  z-index: 2;
+}
+
+.person-head {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.3);
+}
+
+.headset {
+  position: absolute;
+  top: -10px;
+  font-size: 2rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.face {
+  font-size: 2.5rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.person-body {
+  width: 80px;
+  height: 100px;
+  background: linear-gradient(135deg, #333, #555);
+  margin: 0 auto 20px;
+  border-radius: 40px 40px 10px 10px;
+  position: relative;
+}
+
+.person-body::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  width: 40px;
+  height: 60px;
+  background: linear-gradient(135deg, #444, #666);
+  border-radius: 20px;
+  transform: rotate(20deg);
+}
+
+.person-body::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  width: 40px;
+  height: 60px;
+  background: linear-gradient(135deg, #444, #666);
+  border-radius: 20px;
+  transform: rotate(-20deg);
+}
+
+.desk {
+  width: 200px;
+  height: 60px;
+  background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.computer {
+  font-size: 2rem;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.floating-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.float-element {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.7;
+  animation: floatAround 4s ease-in-out infinite;
+}
+
+.float-element:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.float-element:nth-child(2) {
+  top: 60%;
+  right: 10%;
+  animation-delay: 1s;
+}
+
+.float-element:nth-child(3) {
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 2s;
+}
+
+/* Animations */
+@keyframes slideInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes floatAround {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(270deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 0;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-form {
+    padding: 30px;
+  }
+
+  .person-head {
+    width: 100px;
+    height: 100px;
+  }
+
+  .face {
+    font-size: 2rem;
+  }
+
+  .headset {
+    font-size: 1.5rem;
+  }
+
+  .desk {
+    width: 150px;
+    height: 50px;
+  }
+
+  .computer {
+    font-size: 1.5rem;
+  }
+}
