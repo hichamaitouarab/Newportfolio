@@ -10,7 +10,7 @@ const Projects = () => {
       title: "Appointment management",
       description:
         "A modern web platform for a car body repair and maintenance garage. It showcases the garage’s services, allows clients to create an account, book appointments online, and track their reservations through a personalized dashboard. Administrators can manage all bookings efficiently with validation and filtering tools. ",
-      image: process.env.PUBLIC_URL + "/images/avantage.jpg",
+      image: process.env.PUBLIC_URL + "/images/ecommerce.jpg",
       technologies: ["React", "JavaScript", "HTML", "CSS"],
       liveLink: "https://avantage-auto.vercel.app/",
       githubLink: "https://github.com/hichamaitouarab/gestion-rendez-vous",
