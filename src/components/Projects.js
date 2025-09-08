@@ -7,6 +7,16 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "Appointment management",
+      description:
+        "A modern web platform for a car body repair and maintenance garage. It showcases the garage’s services, allows clients to create an account, book appointments online, and track their reservations through a personalized dashboard. Administrators can manage all bookings efficiently with validation and filtering tools. ",
+      image: process.env.PUBLIC_URL + "/images/ecommerce.jpg",
+      technologies: ["React", "JavaScript", "HTML", "CSS"],
+      liveLink: "https://avantage-auto.vercel.app/",
+      githubLink: "https://github.com/hichamaitouarab/gestion-rendez-vous",
+    },
+    {
+      id: 2,
       title: "E-Commerce Website",
       description:
         "A modern e-commerce Website built with React , featuring shopping cart, and placing orders with WhatsApp and Instagram.",
@@ -14,15 +24,6 @@ const Projects = () => {
       technologies: ["React", "JavaScript", "HTML", "CSS"],
       liveLink: "#",
       githubLink: "https://github.com/hichamaitouarab/JewleryStore",
-    },
-    {
-      id: 2,
-      title: "Film Management WebApp",
-      description: "A film management web application with real-time updates.",
-      image: process.env.PUBLIC_URL + "/images/film.jpg",
-      technologies: ["JavaScript", "CSS", "HTML", "Netlify"],
-      liveLink: "https://gestionfilms.netlify.app/",
-      githubLink: "https://github.com/hichamaitouarab/gestion-films",
     },
     {
       id: 3,
@@ -36,16 +37,6 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Contact Management System",
-      description:
-        "A comprehensive contact management system that allows users to add, edit, and delete contacts with a user-friendly interface.",
-      image:process.env.PUBLIC_URL + "/images/contact.png",
-      technologies: ["Vue", "JavaScript", "HTML", "Netlify"],
-      liveLink: "https://contactsgest.netlify.app/",
-      githubLink: "https://github.com/hichamaitouarab/gestionnaire-contacts",
-    },
-    {
-      id: 5,
       title: "Portfolio Website",
       description:
         "A simple Web portfolio template with a clean and modern design.",
@@ -56,11 +47,30 @@ const Projects = () => {
       githubLink: "#",
     },
     {
+      id: 5,
+      title: "Film Management WebApp",
+      description: "A film management web application with real-time updates.",
+      image: process.env.PUBLIC_URL + "/images/film.jpg",
+      technologies: ["JavaScript", "CSS", "HTML", "Netlify"],
+      liveLink: "https://gestionfilms.netlify.app/",
+      githubLink: "https://github.com/hichamaitouarab/gestion-films",
+    },
+    {
       id: 6,
+      title: "Contact Management System",
+      description:
+        "A comprehensive contact management system that allows users to add, edit, and delete contacts with a user-friendly interface.",
+      image: process.env.PUBLIC_URL + "/images/contact.png",
+      technologies: ["Vue", "JavaScript", "HTML", "Netlify"],
+      liveLink: "https://contactsgest.netlify.app/",
+      githubLink: "https://github.com/hichamaitouarab/gestionnaire-contacts",
+    },
+    {
+      id: 7,
       title: "Calculator App",
       description:
         "A simple calculator app built with HTML,CSSand JavaScript, featuring basic arithmetic operations and a clean UI.",
-      image:process.env.PUBLIC_URL + "/images/calculator.jpg",
+      image: process.env.PUBLIC_URL + "/images/calculator.jpg",
       technologies: ["HTML", "CSS", "JavaScript", "Netlify"],
       liveLink: "https://hichamcalculator.netlify.app/",
       githubLink: "https://github.com/hichamaitouarab/calculator",
