@@ -11,7 +11,6 @@ const Navbar = () => {
       const offset = window.scrollY;
       setScrolled(offset > 50);
 
-      // Enhanced active section tracking with intersection observer-like logic
       const sections = ["home", "about", "tech-stack", "projects", "contact"];
       let currentSection = "home";
 
@@ -20,19 +19,15 @@ const Navbar = () => {
         if (element) {
           const rect = element.getBoundingClientRect();
           const elementTop = rect.top + window.scrollY;
-
-          // Check if we've scrolled past this section's start point
           if (window.scrollY >= elementTop - 120) {
             currentSection = sections[i];
             break;
           }
         }
       }
-
       setActiveSection(currentSection);
     };
 
-    // Throttle scroll events for better performance
     let ticking = false;
     const throttledScroll = () => {
       if (!ticking) {
@@ -45,28 +40,22 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", throttledScroll);
-    handleScroll(); // Initial call
-
+    handleScroll();
     return () => window.removeEventListener("scroll", throttledScroll);
   }, []);
 
   const handleLinkClick = (e, targetId) => {
     e.preventDefault();
     setIsOpen(false);
-
-    // Enhanced smooth scroll with better offset calculations
     const target = document.getElementById(targetId);
     if (target) {
       const navbarHeight = 70;
-      const additionalOffset = 20; // Extra spacing for better visual separation
+      const additionalOffset = 20;
       const offsetTop = target.offsetTop - navbarHeight - additionalOffset;
-
       window.scrollTo({
-        top: Math.max(0, offsetTop), // Prevent negative scroll
+        top: Math.max(0, offsetTop),
         behavior: "smooth",
       });
-
-      // Update active section immediately for better UX
       setActiveSection(targetId);
     }
   };
@@ -81,15 +70,20 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <div className="container">
+      <div className="nav-container">
         <div className="nav-content">
+          {/* LOGO */}
           <div className="nav-logo">
             <a href="#home" onClick={(e) => handleLinkClick(e, "home")}>
-              <span className="logo-text">HicHam</span>
-              <span className="logo-dot"></span>
+              <img
+                src={process.env.PUBLIC_URL + "/images/logo2.png"}
+                alt="Hicham Logo"
+                className="logo-image"
+              />
             </a>
           </div>
 
+          {/* MENU LINKS */}
           <div className={`nav-menu ${isOpen ? "active" : ""}`}>
             {navItems.map((item, index) => (
               <a
@@ -105,6 +99,7 @@ const Navbar = () => {
             ))}
           </div>
 
+          {/* HAMBURGER TOGGLE */}
           <div
             className={`nav-toggle ${isOpen ? "active" : ""}`}
             onClick={() => setIsOpen(!isOpen)}

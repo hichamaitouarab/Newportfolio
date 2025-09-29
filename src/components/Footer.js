@@ -36,13 +36,13 @@ const Footer = () => {
       name: "Instagram",
       url: "https://www.instagram.com/hicham_ouarab/",
       icon: <FaInstagram />,
-      color: "#E4405F",
+      color: "#ff0073",
     },
     {
       name: "Email",
       url: "mailto:hichamaitouarab23@gmail.com",
       icon: <FaEnvelope />,
-      color: "#D44638",
+      color: "#ccff00",
     },
   ];
 
@@ -103,10 +103,10 @@ const Footer = () => {
                     <a href="#services">Frontend Design</a>
                   </li>
                   <li>
-                    <a href="#services">.</a>
+                    <a href="#services">Hosting service</a>
                   </li>
                   <li>
-                    <a href="#services">Full Stack Solutions</a>
+                    <a href="#services">Full Stack</a>
                   </li>
                 </ul>
               </div>

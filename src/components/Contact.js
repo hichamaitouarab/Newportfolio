@@ -1,43 +1,69 @@
-import React, { useState } from 'react';
-import '../styles/Contact.css';
-
-// Import icons for the illustration
-import { FaHeadset, FaLaptop, FaEnvelope, FaComments, FaStar } from 'react-icons/fa';
-
+import React, { useState } from "react";
+import "../styles/Contact.css";
+import {
+  FaHeadset,
+  FaLaptop,
+  FaEnvelope,
+  FaComments,
+  FaStar,
+} from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 const Contact = () => {
   const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    message: ''
+    fullName: "",
+    email: "",
+    message: "",
   });
+
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    // Reset form
-    setFormData({
-      fullName: '',
-      email: '',
-      message: ''
-    });
+    setIsSending(true);
+
+    emailjs
+      .send(
+        "service_w5ddckj", // Replace with your EmailJS Service ID
+        "template_5xelxwb", // Replace with your EmailJS Template ID
+        {
+          from_name: formData.fullName,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        "VVdUJUD00-J7L8GQ9" // Replace with your EmailJS Public Key
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response);
+          alert("Thank you for your message! I'll get back to you soon.");
+          setFormData({ fullName: "", email: "", message: "" });
+          setIsSending(false);
+        },
+        (err) => {
+          console.error("FAILED...", err);
+          alert(`Oops! Something went wrong: ${err.text || err}`);
+          setIsSending(false);
+        }
+      );
   };
 
   return (
     <section className="contact" id="contact">
       <div className="container">
         <h2 className="contact-title">Get In Touch</h2>
-        <p className="contact-subtitle">Let's work together on your next project</p>
-        
+        <p className="contact-subtitle">
+          Let's work together on your next project
+        </p>
+
         <div className="contact-content">
+          {/* Form */}
           <div className="contact-form-wrapper">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
@@ -52,7 +78,7 @@ const Contact = () => {
                   placeholder="Enter your full name"
                 />
               </div>
-              
+
               <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input
@@ -65,7 +91,7 @@ const Contact = () => {
                   placeholder="Enter your email"
                 />
               </div>
-              
+
               <div className="form-group">
                 <label htmlFor="message">Message</label>
                 <textarea
@@ -78,13 +104,14 @@ const Contact = () => {
                   rows="5"
                 ></textarea>
               </div>
-              
-              <button type="submit" className="submit-btn">
-                SUBMIT
+
+              <button type="submit" className="submit-btn" disabled={isSending}>
+                {isSending ? "Sending..." : "SUBMIT"}
               </button>
             </form>
           </div>
-          
+
+          {/* Illustration */}
           <div className="contact-illustration">
             <div className="support-person">
               <div className="person-head">
